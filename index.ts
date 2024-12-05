@@ -5,6 +5,7 @@ import { Request, Response } from "express";
 dotenv.config();
 import userRouter from "./routers/userRouter";
 import articleRouter from "./routers/articleRouter";
+import commentRouter from "./routers/commentRouter";
 import responseHandler from "./utils/responseHandler";
 
 const PORT = process.env.PORT;
@@ -19,11 +20,12 @@ app.get("/", (req: Request, res: Response): any => {
 
 app.use("/user", userRouter);
 app.use("/post", articleRouter);
+app.use("/comments", commentRouter);
 
 // Error Handling
-app.use((error: any, req: Request, res: Response, next: NextFunction)=>{
-  responseHandler.error(res, error.message, error.error, error.rc)
-})
+app.use((error: any, req: Request, res: Response, next: NextFunction) => {
+  responseHandler.error(res, error.message, error.error, error.rc);
+});
 
 app.listen(PORT, () => {
   console.log("API RUNNING", PORT);

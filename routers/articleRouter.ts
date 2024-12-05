@@ -8,10 +8,10 @@ import {
 } from "../controllers/article.controllers";
 const route = Router();
 
-route.get("/", getArticle);
-route.get("/id", getArticleById);
-route.post("/articles", addArticle);
-route.patch("/:id", updatedArticle);
-route.delete("/:id", deleteArticle);
+route.get("/article", getArticle);
+route.get("/article/:id", getArticleById);
+route.post("/article", addArticle);
+route.patch("/article/:id", updatedArticle);
+route.delete("/article/:id", deleteArticle);
 
 export default route;

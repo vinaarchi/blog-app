@@ -22,6 +22,7 @@ export const getArticleById = async (req: Request, res: Response) => {
     const { id } = req.params;
     const article = await prisma.article.findUnique({
       where: { id: parseInt(id) },
+      include: { comments: true },
     });
     res.status(200).send({
       message: "Success Get Article Details",
