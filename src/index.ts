@@ -1,7 +1,9 @@
-import App from "./app"
+import App from "./app";
 
-const main =()=> {
-  App.start();
-}
+const main = () => {
+  const server = new App();
+
+  server.start;
+};
 
 main();

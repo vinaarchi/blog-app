@@ -29,7 +29,7 @@ class App {
 
     //middleware for direct access directory
     this.app.use("/", express.static(path.join(__dirname, "../public")));
-    scheduleTask();
+    // scheduleTask();
   }
 
   private routes(): void {
