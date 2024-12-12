@@ -16,7 +16,7 @@ export const verifyToken = (
     }
 
     const checkToken = verify(token, process.env.TOKEN_KEY || "test");
-    console.log(checkToken);
+    console.log("INI DRI VERIFY TOKEN", checkToken);
 
     res.locals.decript = checkToken;
     // meneruskan proses ke controller selanjutnya
