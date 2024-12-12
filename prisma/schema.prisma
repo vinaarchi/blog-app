@@ -15,11 +15,15 @@ datasource db {
 }
 
 model User {
-  id Int @id @default(autoincrement())
+  id Int @id @default (autoincrement())
   username String @unique
   fullname String
   email String @unique
   password String
+  resetToken String?
+  resetTokenExpiry DateTime?
+  imgProfile String?
+  isVerified Boolean @default(false)
   comments Comment[]
   following Follow[] @relation("Following")
   followers Follow[] @relation("FollowedBy")
